@@ -1,0 +1,319 @@
+/* =====================================================
+   КАСТОМНЫЕ СТИЛИ (Поверх Bootstrap)
+   Палитра: голубая (#89ceff) + глубокий синий
+   ===================================================== */
+
+:root {
+    /* Основной голубой */
+    --bs-primary: #89ceff;
+    --bs-primary-rgb: 137, 206, 255;
+    --blue-main: #89ceff;
+    --blue-dark: #3a8fd4;
+    --blue-light: #b8e0ff;
+
+    /* Фоны */
+    --bg-main: #f0f8ff;
+    --bg-card: #ffffff;
+    --bg-fieldset: #f5faff;
+
+    /* Текст */
+    --text-main: #1a3a5c;
+    --text-on-accent: #ffffff;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   ОГРАНИЧЕНИЕ ШИРИНЫ КОНТЕЙНЕРА
+   ===================================================== */
+.main-container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   ШАПКА И ПОДВАЛ
+   ===================================================== */
+.site-header, .site-footer {
+    background-color: var(--blue-main);
+    box-shadow: 0 4px 20px rgba(58, 143, 212, 0.35);
+}
+.site-footer {
+    box-shadow: 0 -4px 20px rgba(58, 143, 212, 0.3);
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    transition: transform 0.35s;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+.logo-link:hover .logo { transform: scale(1.06); }
+.logo-fallback {
+    width: 56px;
+    height: 56px;
+    background-color: var(--blue-dark);
+    font-size: 26px;
+}
+@media (min-width: 768px) {
+    .logo, .logo-fallback { width: 76px; height: 76px; }
+    .logo-fallback { font-size: 32px; }
+}
+
+.site-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+.site-title:hover { border-bottom-color: rgba(255, 255, 255, 0.7); }
+@media (min-width: 768px) {
+    .site-title { font-size: 26px; letter-spacing: 1.2px; }
+}
+
+.nav-link {
+    font-weight: 600;
+    padding: 8px 18px !important;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+    color: #fff !important;
+}
+
+/* =====================================================
+   ЗАГОЛОВКИ
+   ===================================================== */
+.main-title {
+    font-size: 24px;
+    color: var(--blue-dark);
+    border-bottom: 3px solid var(--blue-main);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+@media (min-width: 768px) { .main-title { font-size: 30px; } }
+
+.section-title {
+    color: var(--blue-dark);
+    font-size: 20px;
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-left: 16px;
+    border-bottom: none;
+}
+.section-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    bottom: 6px;
+    width: 4px;
+    border-radius: 2px;
+    background: var(--blue-main);
+}
+@media (min-width: 768px) { .section-title { font-size: 22px; } }
+
+/* =====================================================
+   БЛОКИ КОНТЕНТА И ССЫЛКИ
+   ===================================================== */
+.content-block {
+    border-left: 5px solid var(--blue-main) !important;
+    transition: box-shadow 0.3s;
+}
+.content-block:hover {
+    box-shadow: 0 10px 32px rgba(58, 143, 212, 0.14) !important;
+}
+
+.content-block a {
+    color: var(--blue-dark);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    overflow-wrap: anywhere;
+}
+.content-block a:hover {
+    color: #2a6ba8;
+    border-bottom-color: #2a6ba8;
+}
+
+.img-custom {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* =====================================================
+   ТАБЛИЦА
+   ===================================================== */
+.table-responsive {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 26px rgba(58, 143, 212, 0.12);
+}
+
+.table {
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table-header-custom th {
+    background-color: var(--blue-main) !important;
+    color: #fff !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: none !important;
+    padding: 14px 10px;
+}
+
+.table td {
+    padding: 14px 10px;
+    border-color: #fff !important;
+    background-color: #f5faff;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #fafdff;
+    box-shadow: none;
+}
+
+.table .table-secondary {
+    background-color: #d6eaff !important;
+    color: var(--blue-dark) !important;
+    font-weight: 600;
+}
+
+.table tbody tr:last-child td { border-bottom: none; }
+.table td:last-child { border-right: none; }
+
+/* =====================================================
+   ФОРМА
+   ===================================================== */
+fieldset {
+    background-color: var(--bg-fieldset);
+    border: 1px solid #cce4ff !important;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 22px;
+}
+
+legend.section-title {
+    font-size: 16px;
+    padding: 0 10px;
+    color: var(--blue-dark);
+    font-weight: 700;
+}
+legend.section-title::before { display: none; }
+
+/* Ограничиваем ширину ВСЕХ полей */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    max-width: 320px;
+    width: 100%;
+    padding: 10px 13px;
+    border: 2px solid #cce4ff;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--text-main);
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+}
+
+textarea#bio {
+    max-width: 500px;
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--blue-main);
+    box-shadow: 0 0 0 3px rgba(137, 206, 255, 0.35);
+}
+
+/* Кнопка "Сохранить" — без градиента */
+.btn-purple {
+    background-color: var(--blue-main);
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba(58, 143, 212, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    padding: 12px 30px;
+    width: auto;
+    display: inline-block;
+}
+
+.btn-purple:hover {
+    background-color: var(--blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(58, 143, 212, 0.45);
+    color: #fff;
+}
+
+.btn-purple:active {
+    background-color: var(--blue-dark);
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(58, 143, 212, 0.35);
+}
+
+/* =====================================================
+   ЕДИНЫЙ СТИЛЬ ДЛЯ JS-ВАЛИДАЦИИ
+   ===================================================== */
+
+.form-control.is-invalid,
+.form-select.is-invalid,
+.form-check-input.is-invalid {
+    border-color: #c0392b !important;
+    background-color: #fff5f5 !important;
+}
+
+#gender-group.is-invalid {
+    padding: 8px;
+    border: 2px solid #c0392b;
+    border-radius: 8px;
+    background-color: #fff5f5;
+}
+
+.invalid-feedback {
+    display: none;
+    color: #c0392b;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.form-control.is-invalid ~ .invalid-feedback,
+.form-select.is-invalid ~ .invalid-feedback,
+.form-check-input.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+.form-check .invalid-feedback {
+    display: none;
+}
+.form-check-input.is-invalid ~ .invalid-feedback {
+    display: block;
+}
