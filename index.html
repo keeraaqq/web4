@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Задание 4. Bootstrap</title>
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Ваши кастомные стили -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
 
-    <!-- ============ ШАПКА ============ -->
     <header class="site-header text-white shadow-sm mb-4">
         <div class="container main-container py-3">
             <div class="row align-items-center g-3">
-                <!-- Логотип -->
                 <div class="col-12 col-md-auto text-center text-md-start">
                     <a href="#top" class="logo-link d-inline-block">
                         <img src="https://i.pinimg.com/originals/65/8a/56/658a56b723389eb2cd9217fd4370d1dd.jpg"
@@ -24,13 +20,9 @@
                         <span class="logo-fallback rounded-circle text-white fw-bold d-none align-items-center justify-content-center">A</span>
                     </a>
                 </div>
-
-                <!-- Название сайта -->
                 <div class="col-12 col-md text-center text-md-start">
                     <a href="#top" class="site-title text-white text-decoration-none">Задание 4</a>
                 </div>
-
-                <!-- Навигация -->
                 <div class="col-12 col-md-auto">
                     <nav class="nav justify-content-center justify-content-md-end gap-2">
                         <a href="#links" class="nav-link text-white">Ссылки</a>
@@ -41,17 +33,11 @@
             </div>
         </div>
     </header>
-
-    <!-- ============ ОСНОВНОЙ КОНТЕНТ ============ -->
     <main class="container main-container pb-5">
-
         <h1 class="main-title mb-4">Задание 4. Адаптивная вёрстка</h1>
-
         <div class="row g-4">
-
-            <!-- ---------- Список гиперссылок ---------- -->
-            <div class="col-12" id="links">
-                <section class="content-block bg-white p-3 p-md-4 rounded shadow-sm">
+            <div class="col-12 col-lg-6 order-2 order-lg-1" id="links">
+                <section class="content-block bg-white p-3 p-md-4 rounded shadow-sm h-100">
                     <h2 class="section-title mb-3">Список гиперссылок</h2>
                     <ul class="list-unstyled mb-0">
                         <li class="mb-2"><a href="http://kubsu.ru">1. Абсолютная гиперссылка на главную страницу kubsu.ru (http)</a></li>
@@ -100,10 +86,8 @@
                     </ul>
                 </section>
             </div>
-
-            <!-- ---------- Таблица ---------- -->
-            <div class="col-12" id="table">
-                <section class="content-block bg-white p-3 p-md-4 rounded shadow-sm">
+            <div class="col-12 col-lg-6 order-1 order-lg-2" id="table">
+                <section class="content-block bg-white p-3 p-md-4 rounded shadow-sm h-100">
                     <h2 class="section-title mb-3">Таблица</h2>
                     <div class="table-responsive">
                         <table class="table text-center align-middle mb-0">
@@ -150,95 +134,126 @@
                     </div>
                 </section>
             </div>
-
-            <!-- ---------- Форма ---------- -->
-            <div class="col-12" id="form">
+            <div class="col-12 order-3" id="form">
                 <section class="content-block bg-white p-3 p-md-4 rounded shadow-sm">
                     <h2 class="section-title mb-3">Форма</h2>
-
                     <form id="myForm" action="#" method="post" novalidate>
                         <fieldset class="border p-3 rounded mb-4 bg-light-subtle">
                             <legend class="float-none w-auto px-2 fs-6 section-title">Личные данные</legend>
-
-                            <div class="mb-3">
-                                <label for="fullname" class="form-label">1. ФИО:</label>
-                                <input type="text" class="form-control" id="fullname" name="fullname" 
-                                       placeholder="Иванов Иван Иванович">
-                                <div class="invalid-feedback">Пожалуйста, введите корректное ФИО (только буквы, пробелы и дефисы).</div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="fullname" class="form-label">1. ФИО:</label>
+                                    <input type="text" class="form-control" id="fullname" name="fullname" 
+                                           placeholder="Иванов Иван Иванович">
+                                    <div class="invalid-feedback">Пожалуйста, введите корректное ФИО.</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="phone" class="form-label">2. Телефон:</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" 
+                                           placeholder="+7 (999) 123-45-67">
+                                    <div class="invalid-feedback">Пожалуйста, введите корректный номер телефона.</div>
+                                </div>
                             </div>
-
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">2. Телефон:</label>
-                                <input type="tel" class="form-control" id="phone" name="phone" 
-                                       placeholder="+7 (999) 123-45-67">
-                                <div class="invalid-feedback">Пожалуйста, введите корректный номер телефона.</div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="email" class="form-label">3. E-mail:</label>
+                                    <input type="email" class="form-control" id="email" name="email" 
+                                           placeholder="example@mail.ru">
+                                    <div class="invalid-feedback">Пожалуйста, введите корректный e-mail.</div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="birthdate" class="form-label">4. Дата рождения:</label>
+                                    <input type="date" class="form-control" id="birthdate" name="birthdate">
+                                    <div class="invalid-feedback">Пожалуйста, выберите дату.</div>
+                                </div>
                             </div>
-
-                            <div class="mb-3">
-                                <label for="email" class="form-label">3. E-mail:</label>
-                                <input type="email" class="form-control" id="email" name="email" 
-                                       placeholder="example@mail.ru">
-                                <div class="invalid-feedback">Пожалуйста, введите корректный e-mail.</div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="birthdate" class="form-label">4. Дата рождения:</label>
-                                <input type="date" class="form-control" id="birthdate" name="birthdate">
-                                <div class="invalid-feedback">Пожалуйста, выберите дату (не в будущем).</div>
-                            </div>
-
-                            <div class="mb-3">
-                                <span class="form-label d-block">5. Пол:</span>
-                                <div id="gender-group">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male">
-                                        <label class="form-check-label" for="genderMale">Мужской</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
-                                        <label class="form-check-label" for="genderFemale">Женский</label>
+                            <div class="row g-3 mb-3">
+                                <div class="col-12 col-md-6">
+                                    <div class="p-3 border rounded bg-white h-100">
+                                        <span class="form-label d-block fw-bold">5. Пол:</span>
+                                        <div id="gender-group">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male">
+                                                <label class="form-check-label" for="genderMale">Мужской</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
+                                                <label class="form-check-label" for="genderFemale">Женский</label>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback" id="gender-error">Пожалуйста, выберите пол.</div>
                                     </div>
                                 </div>
-                                <!-- Исправлено: invalid-feedback должен быть sibling, а не child -->
-                                <div class="invalid-feedback" id="gender-error">Пожалуйста, выберите пол.</div>
+                                <div class="col-12 col-md-6">
+                                    <div class="p-3 border rounded bg-white h-100">
+                                        <label class="form-label fw-bold">6. Любимый язык программирования:</label>
+                                        <div class="row">
+                                            <div class="col-6 col-md-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="Pascal" id="langPascal">
+                                                    <label class="form-check-label" for="langPascal">Pascal</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="JavaScript" id="langJS">
+                                                    <label class="form-check-label" for="langJS">JavaScript</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="Java" id="langJava">
+                                                    <label class="form-check-label" for="langJava">Java</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="Prolog" id="langProlog">
+                                                    <label class="form-check-label" for="langProlog">Prolog</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="C" id="langC">
+                                                    <label class="form-check-label" for="langC">C</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="PHP" id="langPHP">
+                                                    <label class="form-check-label" for="langPHP">PHP</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="Haskell" id="langHaskell">
+                                                    <label class="form-check-label" for="langHaskell">Haskell</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="Scala" id="langScala">
+                                                    <label class="form-check-label" for="langScala">Scala</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-md-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="C++" id="langCpp">
+                                                    <label class="form-check-label" for="langCpp">C++</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="Python" id="langPython">
+                                                    <label class="form-check-label" for="langPython">Python</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="langs[]" value="Clojure" id="langClojure">
+                                                    <label class="form-check-label" for="langClojure">Clojure</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="invalid-feedback" id="lang-error">Пожалуйста, выберите хотя бы один язык.</div>
+                                    </div>
+                                </div>
                             </div>
-                        </fieldset>
-
-                        <fieldset class="border p-3 rounded mb-4 bg-light-subtle">
-                            <legend class="float-none w-auto px-2 fs-6 section-title">Дополнительная информация</legend>
-
-                            <div class="mb-3">
-                                <label for="lang" class="form-label">6. Любимый язык программирования:</label>
-                                <select id="lang" name="languages[]" class="form-select" multiple size="6">
-                                    <option value="Pascal">Pascal</option>
-                                    <option value="C">C</option>
-                                    <option value="C++">C++</option>
-                                    <option value="JavaScript">JavaScript</option>
-                                    <option value="PHP">PHP</option>
-                                    <option value="Python">Python</option>
-                                    <option value="Java">Java</option>
-                                    <option value="Haskell">Haskell</option>
-                                    <option value="Clojure">Clojure</option>
-                                    <option value="Prolog">Prolog</option>
-                                    <option value="Scala">Scala</option>
-                                </select>
-                                <div class="invalid-feedback" id="lang-error">Пожалуйста, выберите хотя бы один язык программирования.</div>
-                                <div class="form-text">Зажмите Ctrl (или Cmd) чтобы выбрать несколько</div>
-                            </div>
-
                             <div class="mb-3">
                                 <label for="bio" class="form-label">7. Биография:</label>
                                 <textarea id="bio" name="bio" class="form-control" rows="5" 
                                           placeholder="Расскажите о себе..."></textarea>
                                 <div class="invalid-feedback">Пожалуйста, заполните биографию.</div>
                             </div>
-
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="contract" name="contract" value="yes">
                                 <label class="form-check-label" for="contract">8. С контрактом ознакомлен(а)</label>
                                 <div class="invalid-feedback">Необходимо согласие с контрактом.</div>
                             </div>
-
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-purple">Сохранить</button>
                             </div>
@@ -246,45 +261,38 @@
                     </form>
                 </section>
             </div>
-
         </div>
-
         <h2 id="bottom" class="section-title mt-4">Конец страницы</h2>
         <p><a href="#top" class="text-decoration-none">Наверх</a></p>
-
     </main>
 
-    <!-- ============ ПОДВАЛ ============ -->
-    <footer class="site-footer text-white py-4 mt-5 text-center">
+    <footer class="site-footer text-white py-3 mt-5">
         <div class="container main-container">
-            &copy; Авдошина Мария
+            <div class="d-flex justify-content-start">
+                <span>Авдошина Мария</span>
+            </div>
         </div>
     </footer>
 
-    <!-- ============ СКРИПТ ВАЛИДАЦИИ ============ -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('myForm');
 
-            // Показ ошибки
             function showError(field) {
                 field.classList.add('is-invalid');
                 const feedback = field.parentElement.querySelector('.invalid-feedback');
                 if (feedback) feedback.style.display = 'block';
             }
 
-            // Скрытие ошибки
             function hideError(field) {
                 field.classList.remove('is-invalid');
                 const feedback = field.parentElement.querySelector('.invalid-feedback');
                 if (feedback) feedback.style.display = 'none';
             }
 
-            // Проверка всех полей
             function validateForm() {
                 let isValid = true;
 
-                // 1. ФИО
                 const fullname = document.getElementById('fullname');
                 const fullnameRegex = /^[а-яА-ЯёЁa-zA-Z\s\-]+$/;
                 if (!fullname.value.trim() || !fullnameRegex.test(fullname.value.trim())) {
@@ -294,7 +302,6 @@
                     hideError(fullname);
                 }
 
-                // 2. Телефон
                 const phone = document.getElementById('phone');
                 const phoneRegex = /^[\d\s\+\-\(\)]+$/;
                 if (!phone.value.trim() || !phoneRegex.test(phone.value.trim())) {
@@ -304,7 +311,6 @@
                     hideError(phone);
                 }
 
-                // 3. Email
                 const email = document.getElementById('email');
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
@@ -314,7 +320,6 @@
                     hideError(email);
                 }
 
-                // 4. Дата рождения
                 const birthdate = document.getElementById('birthdate');
                 const today = new Date().toISOString().split('T')[0];
                 if (!birthdate.value || birthdate.value > today) {
@@ -324,7 +329,6 @@
                     hideError(birthdate);
                 }
 
-                // 5. Пол
                 const genderGroup = document.getElementById('gender-group');
                 const genderSelected = document.querySelector('input[name="gender"]:checked');
                 const genderError = document.getElementById('gender-error');
@@ -337,19 +341,15 @@
                     if (genderError) genderError.style.display = 'none';
                 }
 
-                // 6. Язык программирования
-                const langSelect = document.getElementById('lang');
+                const langCheckboxes = document.querySelectorAll('input[name="langs[]"]:checked');
                 const langError = document.getElementById('lang-error');
-                if (langSelect.selectedOptions.length === 0) {
-                    langSelect.classList.add('is-invalid');
-                    if (langError) langError.style.display = 'block';
+                if (langCheckboxes.length === 0) {
+                    langError.style.display = 'block';
                     isValid = false;
                 } else {
-                    langSelect.classList.remove('is-invalid');
-                    if (langError) langError.style.display = 'none';
+                    langError.style.display = 'none';
                 }
 
-                // 7. Биография
                 const bio = document.getElementById('bio');
                 if (!bio.value.trim()) {
                     showError(bio);
@@ -358,7 +358,6 @@
                     hideError(bio);
                 }
 
-                // 8. Чекбокс контракта
                 const contract = document.getElementById('contract');
                 if (!contract.checked) {
                     contract.classList.add('is-invalid');
@@ -374,7 +373,6 @@
                 return isValid;
             }
 
-            // Отправка формы
             form.addEventListener('submit', function (event) {
                 if (!validateForm()) {
                     event.preventDefault();
@@ -386,7 +384,6 @@
                 }
             });
 
-            // Скрытие ошибок при вводе / изменении
             form.querySelectorAll('input, select, textarea').forEach(function (field) {
                 field.addEventListener('input', function () {
                     hideError(field);
