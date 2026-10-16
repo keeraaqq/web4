@@ -1,22 +1,14 @@
-/* =====================================================
-   КАСТОМНЫЕ СТИЛИ (Поверх Bootstrap)
-   Палитра: голубая (#89ceff) + глубокий синий
-   ===================================================== */
-
 :root {
-    /* Основной голубой */
     --bs-primary: #89ceff;
     --bs-primary-rgb: 137, 206, 255;
     --blue-main: #89ceff;
     --blue-dark: #3a8fd4;
     --blue-light: #b8e0ff;
 
-    /* Фоны */
     --bg-main: #f0f8ff;
     --bg-card: #ffffff;
     --bg-fieldset: #f5faff;
 
-    /* Текст */
     --text-main: #1a3a5c;
     --text-on-accent: #ffffff;
 }
@@ -28,18 +20,12 @@ body {
     line-height: 1.6;
 }
 
-/* =====================================================
-   ОГРАНИЧЕНИЕ ШИРИНЫ КОНТЕЙНЕРА
-   ===================================================== */
 .main-container {
-    max-width: 960px;
+    max-width: 1320px;
     width: 100%;
     margin: 0 auto;
 }
 
-/* =====================================================
-   ШАПКА И ПОДВАЛ
-   ===================================================== */
 .site-header, .site-footer {
     background-color: var(--blue-main);
     box-shadow: 0 4px 20px rgba(58, 143, 212, 0.35);
@@ -93,9 +79,6 @@ body {
     color: #fff !important;
 }
 
-/* =====================================================
-   ЗАГОЛОВКИ
-   ===================================================== */
 .main-title {
     font-size: 24px;
     color: var(--blue-dark);
@@ -125,9 +108,6 @@ body {
 }
 @media (min-width: 768px) { .section-title { font-size: 22px; } }
 
-/* =====================================================
-   БЛОКИ КОНТЕНТА И ССЫЛКИ
-   ===================================================== */
 .content-block {
     border-left: 5px solid var(--blue-main) !important;
     transition: box-shadow 0.3s;
@@ -157,20 +137,19 @@ body {
     margin-bottom: 10px;
 }
 
-/* =====================================================
-   ТАБЛИЦА
-   ===================================================== */
 .table-responsive {
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 8px 26px rgba(58, 143, 212, 0.12);
+    border: 1px solid #bfbfbf;
 }
 
 .table {
     margin-bottom: 0;
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
+    border: 1px solid #bfbfbf;
 }
 
 .table-header-custom th {
@@ -178,13 +157,13 @@ body {
     color: #fff !important;
     font-weight: 700;
     letter-spacing: 0.5px;
-    border: none !important;
     padding: 14px 10px;
+    border: 1px solid #bfbfbf !important;
 }
 
 .table td {
     padding: 14px 10px;
-    border-color: #fff !important;
+    border: 1px solid #bfbfbf !important;
     background-color: #f5faff;
 }
 
@@ -199,12 +178,9 @@ body {
     font-weight: 600;
 }
 
-.table tbody tr:last-child td { border-bottom: none; }
-.table td:last-child { border-right: none; }
+.table tbody tr:last-child td { border-bottom: 1px solid #bfbfbf; }
+.table td:last-child { border-right: 1px solid #bfbfbf; }
 
-/* =====================================================
-   ФОРМА
-   ===================================================== */
 fieldset {
     background-color: var(--bg-fieldset);
     border: 1px solid #cce4ff !important;
@@ -221,7 +197,6 @@ legend.section-title {
 }
 legend.section-title::before { display: none; }
 
-/* Ограничиваем ширину ВСЕХ полей */
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -252,7 +227,6 @@ input:focus, select:focus, textarea:focus {
     box-shadow: 0 0 0 3px rgba(137, 206, 255, 0.35);
 }
 
-/* Кнопка "Сохранить" — без градиента */
 .btn-purple {
     background-color: var(--blue-main);
     border: none;
@@ -278,10 +252,6 @@ input:focus, select:focus, textarea:focus {
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(58, 143, 212, 0.35);
 }
-
-/* =====================================================
-   ЕДИНЫЙ СТИЛЬ ДЛЯ JS-ВАЛИДАЦИИ
-   ===================================================== */
 
 .form-control.is-invalid,
 .form-select.is-invalid,
